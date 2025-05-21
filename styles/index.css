@@ -627,3 +627,14 @@ footer p {
     width: 100%;
   }
 }
+
+/* Heart Icon Styles */
+  .heart {
+    color: gray; /* default color */
+    transition: color 0.3s ease;
+  }
+
+  .heart.liked {
+    color: red; /* liked state */
+  }
+
