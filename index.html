@@ -1,97 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>InstaSpots Project - Circle-03</title>
-        <link rel="stylesheet" href="./styles/index.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InstaSpots Project - Circle-03</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
 
-    <body>
-        <div class="container">
-            <!-- Hero Section -->
-            <header class="hero">
-                <!-- Logo Section -->
-                <div class="logo">
-                    <img src="./assets/images/Logo.svg" alt="InstaSpots Logo Text">
+  <body>
+    <div class="instaspots">
+      <!-- Hero Section -->
+      <header class="hero" role="banner">
+        <!-- Logo Section -->
+        <nav class="hero__logo" role="navigation"  aria-label="Main navigation">
+          <img
+            class="hero__logo-image"
+            src="./assets/images/Logo.svg"
+            alt="InstaSpots Logo Text"
+          />
+        </nav>
+      </header>
+
+      <!-- Hero Content Section -->
+      <section class="profile wrapper" aria-labelledby="profile">
+            <!-- Avatar Image Section -->
+            <figure class="profile__avatar avatar-image">
+                <img
+                    class="profile__avatar-image"
+                    src="./assets/images/Avatar.png"
+                    alt="Avatar Image"
+                />
+            </figure>
+
+            <!-- Hero Text Section -->
+            <article class="profile__info">
+                <div class="profile__text">
+                    <h1 class="profile__name">Aliaune Damala Bouga Time Bongo Puru Nacka Lu Lu Lu Badara Akon...</h1>
+                    <p class="profile__bio">Known mononymously as Akon (/ˈeɪkɒn/), is a Senegalese-American singer, record producer, and
+                        entrepreneur. An influential figure in modern world...</p>
                 </div>
-            </header>
+                <!-- Hero Actions Section -->
+                <div class="profile__actions"
+                role="toolbar" aria-label="profile actions">
+                <!-- Edit Profile Button Section -->
+                    <button id="profile__edit-btn" class="profile__edit-btn" aria-label="edit profile">
+                        <span><i class="fa-solid fa-pencil"></i></span>
+                        Edit Profile
+                    </button>
+                    <!-- New Post Button Section -->
+                    <button class="profile__newpost-btn" id="profile__newpost-btn" type="button">
+                        <span><img src="./assets/images/Group 26.svg" alt="New Post Icon"></span>
+                        New Post
+                    </button>
+                </div>
+            </article>
+        </section>
 
+        <!-- section break -->
+        <hr class="horizontal-line wrapper" aria-hidden="true">
         
-            <!-- Hero Content Section -->
-                <section class="flex_container wrapper">
-                    <!-- Avatar Image Section -->
-                    <div class="avatar-image">
-                        <img src="./assets/images/Avatar.png" alt="Avatar Image">
-                    </div>
+        <!-- Main Section -->
+        <main class="main wrapper">
+            <section class="cards" aria-label="Photo gallery">
+                <!--List of Posted Cards-->
+            </section>
+        </main>
 
-                    <!-- Hero Text Section -->
-                    <div class="hero-text">
-                        <div class="text1">
-                            <h1>Aliaune Damala Bouga Time Bongo Puru Nacka Lu Lu Lu Badara Akon...</h1>
-                            <p>Known mononymously as Akon (/ˈeɪkɒn/), is a Senegalese-American singer, record producer, and
-                                entrepreneur. An influential figure in modern world...</p>
-                        </div>
-                        <!-- Hero Actions Section -->
-                        <div class="hero-actions">
-                        <!-- Edit Profile Button Section -->
-                            <button id="edit_btn" class="edit_profile">
-                                <span><i class="fa-solid fa-pencil"></i></span>
-                                Edit Profile
-                            </button>
-                            <!-- New Post Button Section -->
-                            <button class="hero-action-button">
-                                <span><img src="./assets/images/Group 26.svg" alt="New Post Icon"></span>
-                                New Post
-                            </button>
-                        </div>
-                    </div>
-                </section>
+        <!-- section break -->
+        <hr class="horizontal-line wrapper" aria-hidden="true"/>
+        <!--Main Page Footer Section -->
+        <footer class="footer wrapper">
+            <p class="footer__copyright">2024 &#169; Spots</p>
+        </footer>
+    </div>
 
-            <!-- section break -->
-            <div class="empty-div wrapper"></div>
-            
-            <!-- Main Section -->
-            <main class="main wrapper">
-                <section class="cards">
-                    <!--List of Posted Cards-->
-                </section>
-            </main>
-
-            <!-- section break -->
-            <div class="empty-div wrapper"></div>
-            <!-- Footer Section -->
-            <footer class="footer wrapper">
-                <p>2024 &#169; Spots</p>
-            </footer>
-
-        </div>
         <!-- Profile Edit Modal -->
-        <div id="profileModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Edit Profile</h2>
-                <form id="profileForm">
-                    <div class="form-group">
+        <dialog id="profileModal" class="modal" aria-labelledby="modalTitle" aria-modal="true">
+            <div class="modal__content" role="document">
+                <header class="modal__header">
+                    <h2 id="modalTitle">Edit Profile</h2>
+                    <button type="button" class="modal__close" aria-label="Close modal">&times;</button>
+                </header>
+               
+                <form id="profileForm" class="modal__form" aria-label="Edit profile form">
+                    <div class="modal__form-group">
                         <label for="profileName">Name:</label>
-                        <input type="text" id="profileName" name="profileName" minlength="3" maxlength="200" required>
+                        <input type="text" id="profileName" name="profileName" minlength="3" maxlength="200" required  aria-required="true"
+                            aria-labelledby="nameLabel">
                     </div>
-                    <div class="form-group">
+                    <div class="modal__form-group">
                         <label for="profileBio">Bio:</label>
-                        <textarea id="profileBio" name="profileBio" rows="4" required></textarea>
+                        <textarea id="profileBio" name="profileBio" rows="4" required aria-required="true"
+                            aria-labelledby="bioLabel"></textarea>
                     </div>
-                    <div class="form-group">
+                    <div class="modal__form-group">
                         <label for="profileImage">Profile Image:</label>
-                        <input type="file" id="profileImage" name="profileImage" accept="image/*">
+                        <input type="file" id="profileImage" name="profileImage" accept="image/*" aria-labelledby="imageLabel">
                     </div>
-                    <div class="form-actions">
-                        <button type="submit" class="save-btn">Save Changes</button>
-                        <button type="button" class="cancel-btn">Cancel</button>
-                    </div>
+                    <footer class="modal__actions">
+                        <button type="submit" class="modal__save-btn">Save Changes</button>
+                        <button type="button" class="modal__cancel-btn">Cancel</button>
+                    </footer>
                 </form>
             </div>
-        </div>
+        </dialog>
+
 
              <!-- Image Card Modal -->
 
@@ -102,11 +119,29 @@
                         <div class="modalText">
                             <p ></p>
                             <img src="" alt="" />
-                            <span id="heart" class="heart" style="cursor: pointer; font-size: 24px;">&#9829;</span>
-
                         </div>
             </div>
-        </div>
-        <script type="module" src="index.js"></script>
-    </body>
+            <div class="form-group">
+               <label for="postTitle" id="postTitleLabel">Title:</label>
+               <input type="text"
+               id="postTitle"
+               name="postTitle"
+               class="pstTitle"
+               required
+               minlength="3"
+               maxlength="20"
+               required="true"
+               aria-labelledby="postImageLabel"
+               >
+                <div id="titleHelp" class="title-help" aria-live="polite"></div>
+            </div>
+            <footer class="form-actions">
+               <button type="submit" class="save-btn">Post</button>
+               <button type="button" class="cancel-btn">Cancel</button>
+            </footer>
+          </form>
+        </dialog>
+
+    <script type="module" src="index.js"></script>
+  </body>
 </html>
